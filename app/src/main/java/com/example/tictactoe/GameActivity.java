@@ -88,8 +88,10 @@ public class GameActivity extends AppCompatActivity {
                     break;
                }
 
-               if(gameState[0]!=2&&gameState[1]!=2&&gameState[2]!=2&&gameState[3]!=2&&gameState[4]!=2
-                           &&gameState[5]!=2&&gameState[6]!=2&&gameState[7]!=2&&gameState[8]!=2) {
+               if((gameState[0]!=2&&gameState[1]!=2&&gameState[2]!=2&&gameState[3]!=2&&gameState[4]!=2
+                           &&gameState[5]!=2&&gameState[6]!=2&&gameState[7]!=2&&gameState[8]!=2)&&(gameState[winPosition[0]] == gameState[winPosition[1]]  &&
+                       gameState[winPosition[1]]==gameState[winPosition[2]] &&
+                       gameState[winPosition[0]] != 2)) {
 
                        mCurrentPlayer.setText("Draw");
                        mToPlay.setVisibility(View.INVISIBLE);
