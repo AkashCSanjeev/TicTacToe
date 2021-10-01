@@ -86,20 +86,19 @@ public class GameActivity extends AppCompatActivity {
 
                     gameActive = false;
                     break;
-               }
+               }else {
+                   if((gameState[0]!=2&&gameState[1]!=2&&gameState[2]!=2&&gameState[3]!=2&&gameState[4]!=2
+                       &&gameState[5]!=2&&gameState[6]!=2&&gameState[7]!=2&&gameState[8]!=2)&&(gameState[winPosition[0]] != gameState[winPosition[1]]  &&
+                           gameState[winPosition[1]]!=gameState[winPosition[2]] &&
+                           gameState[winPosition[0]] != 2)){
+                   mCurrentPlayer.setText("Draw");
+                   mToPlay.setVisibility(View.INVISIBLE);
+                   scoreO = scoreO + 0.5f;
+                   scoreX = scoreX + 0.5f;
+                   gameActive = false;
+                   break;
+               }}
 
-               if((gameState[0]!=2&&gameState[1]!=2&&gameState[2]!=2&&gameState[3]!=2&&gameState[4]!=2
-                           &&gameState[5]!=2&&gameState[6]!=2&&gameState[7]!=2&&gameState[8]!=2)&&(gameState[winPosition[0]] == gameState[winPosition[1]]  &&
-                       gameState[winPosition[1]]==gameState[winPosition[2]] &&
-                       gameState[winPosition[0]] != 2)) {
-
-                       mCurrentPlayer.setText("Draw");
-                       mToPlay.setVisibility(View.INVISIBLE);
-                       scoreO = scoreO + 0.5f;
-                       scoreX = scoreX + 0.5f;
-                       gameActive = false;
-                       break;
-                   }
 
             }
         }catch (Exception e){
