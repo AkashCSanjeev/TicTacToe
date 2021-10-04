@@ -31,13 +31,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(mPlayer1.getText().toString().matches("")){
-                    mPlayer1.setHint("*name required*");
-                    mPlayer1.setHintTextColor(getResources().getColor(R.color.design_default_color_error));
+                    mPlayer1.setError("Name Required");
                     return;
                 }
                 if(mPlayer2.getText().toString().matches("")){
-                    mPlayer2.setHint("*name required*");
-                    mPlayer2.setHintTextColor(getResources().getColor(R.color.design_default_color_error));
+                    mPlayer2.setError("Name Required");
                     return;
                 }
                 Intent intent = new Intent(MainActivity.this,GameActivity.class);
